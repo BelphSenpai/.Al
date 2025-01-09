@@ -144,9 +144,26 @@ class _ConfigPageState extends State<ConfigPage> {
               ),
               const Divider(),
               const Text('Tema'),
-              const SizedBox(height: 16.0),
-              ColorPicker(
+              BlockPicker(
                 pickerColor: _selectedColor,
+                availableColors: [
+                  Colors.red,
+                  Colors.green,
+                  Colors.blue,
+                  Colors.yellow,
+                  Colors.purple,
+                  Colors.orange,
+                  Colors.pink,
+                  Colors.teal,
+                  Colors.cyan,
+                  Colors.indigo,
+                  Colors.amber,
+                  Colors.brown,
+                  Colors.grey,
+                  Colors.blueGrey,
+                  Colors.deepOrange,
+                  Colors.deepPurple,
+                ],
                 onColorChanged: (Color color) {
                   setState(() {
                     _selectedColor = color;
@@ -161,8 +178,6 @@ class _ConfigPageState extends State<ConfigPage> {
                     castellsApp.updateSelectedColor(color);
                   }
                 },
-                showLabel: true,
-                pickerAreaHeightPercent: 0.8,
               ),
               const Divider(),
               const Text('Notificacions'),
